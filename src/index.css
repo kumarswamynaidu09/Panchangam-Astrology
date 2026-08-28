@@ -1,0 +1,180 @@
+@import "tailwindcss";
+
+@theme {
+  --color-outline: #707970;
+  --color-on-error: #ffffff;
+  --color-on-tertiary: #ffffff;
+  --color-on-surface-variant: #404941;
+  --color-inverse-surface: #30312b;
+  --color-surface-dim: #dcdad2;
+  --color-on-primary-container: #79bb87;
+  --color-tertiary-container: #801517;
+  --color-on-tertiary-fixed: #410003;
+  --color-primary: #003215;
+  --color-tertiary-fixed: #ffdad6;
+  --color-tertiary: #5d0007;
+  --color-on-primary: #ffffff;
+  --color-secondary: #785a00;
+  --color-on-primary-fixed-variant: #0b5229;
+  --color-primary-fixed: #aef2bb;
+  --color-surface-container: #f0eee5;
+  --color-background: #fbf9f0;
+  --color-surface-bright: #fbf9f0;
+  --color-surface-container-lowest: #ffffff;
+  --color-on-tertiary-fixed-variant: #891c1d;
+  --color-error: #ba1a1a;
+  --color-on-secondary-container: #705300;
+  --color-error-container: #ffdad6;
+  --color-secondary-container: #ffc73b;
+  --color-surface-container-low: #f6f4eb;
+  --color-primary-container: #004b23;
+  --color-inverse-primary: #93d6a0;
+  --color-on-primary-fixed: #00210c;
+  --color-on-secondary-fixed: #251a00;
+  --color-surface-variant: #e4e3da;
+  --color-outline-variant: #c0c9be;
+  --color-on-secondary: #ffffff;
+  --color-on-surface: #1b1c17;
+  --color-primary-fixed-dim: #93d6a0;
+  --color-surface-container-highest: #e4e3da;
+  --color-on-background: #1b1c17;
+  --color-on-error-container: #93000a;
+  --color-surface-tint: #2a6a3f;
+  --color-on-secondary-fixed-variant: #5b4300;
+  --color-tertiary-fixed-dim: #ffb3ad;
+  --color-surface: #fbf9f0;
+  --color-on-tertiary-container: #ff8b83;
+  --color-secondary-fixed-dim: #f5be33;
+  --color-surface-container-high: #eae8e0;
+  --color-secondary-fixed: #ffdf9d;
+  --color-inverse-on-surface: #f3f1e8;
+
+  --spacing-section-gap: 32px;
+  --spacing-container-padding: 24px;
+  --spacing-unit: 4px;
+  --spacing-element-gap: 16px;
+  --spacing-grid-gutter: 20px;
+
+  --font-body-md: "Noto Sans Telugu", sans-serif;
+  --font-title-lg: "Noto Sans Telugu", sans-serif;
+  --font-body-lg: "Noto Sans Telugu", sans-serif;
+  --font-display-lg: "Noto Serif Telugu", serif;
+  --font-headline-md: "Noto Serif Telugu", serif;
+  --font-display-lg-mobile: "Noto Serif Telugu", serif;
+  --font-label-sm: "Noto Sans Telugu", sans-serif;
+
+  --text-body-md: 14px;
+  --text-body-md--line-height: 20px;
+  --text-body-md--font-weight: 400;
+
+  --text-title-lg: 20px;
+  --text-title-lg--line-height: 28px;
+  --text-title-lg--font-weight: 600;
+
+  --text-body-lg: 16px;
+  --text-body-lg--line-height: 24px;
+  --text-body-lg--font-weight: 400;
+
+  --text-display-lg: 34px;
+  --text-display-lg--line-height: 48px;
+  --text-display-lg--font-weight: 700;
+
+  --text-headline-md: 24px;
+  --text-headline-md--line-height: 32px;
+  --text-headline-md--font-weight: 600;
+
+  --text-display-lg-mobile: 28px;
+  --text-display-lg-mobile--line-height: 38px;
+  --text-display-lg-mobile--font-weight: 700;
+
+  --text-label-sm: 12px;
+  --text-label-sm--line-height: 16px;
+  --text-label-sm--letter-spacing: 0.05em;
+  --text-label-sm--font-weight: 500;
+}
+
+@layer utilities {
+  .parchment-bg {
+    background-color: #fcf9f2;
+  }
+  .gold-border {
+    border-color: #D9A514;
+  }
+  .gold-text {
+    color: #D9A514;
+  }
+  .burgundy-text {
+    color: #891c1d;
+  }
+
+  .kundali-grid {
+      border-top: 1.5px solid #D35400;
+      border-left: 1.5px solid #D35400;
+  }
+  
+  .traditional-border {
+      border: 1px solid #876E4B;
+  }
+  
+  .chart-cell {
+      border-bottom: 1.5px solid #D35400;
+      border-right: 1.5px solid #D35400;
+      padding: 4px;
+      text-align: center;
+      min-height: 60px; 
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: #FFFFFF;
+      position: relative;
+  }
+  
+  .chart-cell-center {
+      border-bottom: 1.5px solid #D35400;
+      border-right: 1.5px solid #D35400;
+      grid-column: 2 / span 2;
+      grid-row: 2 / span 2;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: #FFFFFF;
+      position: relative;
+  }
+  
+  .panchangam-table th {
+      font-weight: normal;
+      text-align: left;
+      padding: 4px 8px;
+      color: var(--color-on-secondary-fixed-variant);
+  }
+  
+  .panchangam-table td {
+      padding: 4px 8px;
+  }
+  
+  .graha-table {
+      width: 100%;
+      border-collapse: collapse;
+  }
+  
+  .graha-table th {
+      border: 1px solid var(--color-outline-variant);
+      padding: 8px;
+      background-color: var(--color-surface-container);
+      color: var(--color-on-secondary-fixed-variant);
+      font-weight: 500;
+  }
+  
+  .graha-table td {
+      border: 1px solid var(--color-outline-variant);
+      padding: 8px;
+      text-align: center;
+      min-height: 38px; 
+  }
+}
+
+.react-datepicker-wrapper {
+  width: 100%;
+}

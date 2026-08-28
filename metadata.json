@@ -1,0 +1,8 @@
+{
+  "name": " Panchangam Astrology",
+  "description": "Vedic Astrology Panchangam details and calculations.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
