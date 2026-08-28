@@ -17,6 +17,7 @@ export default function InputScreen({ appState, setAppState, onNext }: InputScre
   const [searchQuery, setSearchQuery] = useState('');
   const [searchResults, setSearchResults] = useState<any[]>([]);
   const [isSearching, setIsSearching] = useState(false);
+  const [showValidationPopup, setShowValidationPopup] = useState(false);
 
   // Initialize birthDate from existing string format YYYY-MM-DD
   const [birthDate, setBirthDate] = useState<Date | null>(() => {
@@ -136,6 +137,8 @@ export default function InputScreen({ appState, setAppState, onNext }: InputScre
               e.preventDefault(); 
               if (validateForm()) {
                 onNext(); 
+              } else {
+                setShowValidationPopup(true);
               }
             }}>
               <section className="space-y-4">
@@ -496,6 +499,30 @@ export default function InputScreen({ appState, setAppState, onNext }: InputScre
         </div>
         <p className="font-label-sm text-label-sm text-on-primary opacity-80">© 2025 శ్రీ భవానీ శంకర జ్యోతిష్యాలయం | సర్వ హక్కులు రక్షించబడినవి</p>
       </footer>
+
+      {showValidationPopup && (
+        <div className="fixed inset-0 bg-black/60 backdrop-blur-xs flex items-center justify-center p-4 z-50 animate-fade-in">
+          <div className="parchment-bg max-w-md w-full rounded-xl border-2 border-secondary p-6 shadow-2xl relative animate-scale-up">
+            <div className="absolute inset-1 border border-secondary/30 rounded-lg pointer-events-none"></div>
+            
+            <div className="flex flex-col items-center text-center">
+              <span className="material-symbols-outlined text-[#891c1d] text-5xl mb-4" style={{ fontVariationSettings: "'FILL' 1" }}>warning</span>
+              <h3 className="font-title-lg text-2xl text-[#891c1d] font-bold mb-3">వివరాలు పూర్తికాలేదు!</h3>
+              <p className="font-body-md text-on-surface-variant text-base leading-relaxed mb-6">
+                దయచేసి కొనసాగడానికి మీ పేరు, లింగం, జనన తేదీ, సమయం మరియు జనన స్థలం వివరాలను పూర్తిగా నమోదు చేయండి.
+              </p>
+              
+              <button 
+                type="button"
+                onClick={() => setShowValidationPopup(false)}
+                className="bg-primary hover:bg-primary-container text-on-primary font-semibold px-8 py-2.5 rounded border border-secondary transition-all duration-200 cursor-pointer shadow-md active:scale-95"
+              >
+                సరే (OK)
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
