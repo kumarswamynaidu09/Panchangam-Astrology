@@ -145,16 +145,6 @@ export default function ResultsScreen({ appState, onBack }: ResultsScreenProps) 
     
     return (
       <div className="chart-cell">
-        {outerLabel && (
-          <span className={`absolute font-bold text-[#D35400] text-[15px] md:text-lg ${
-            outerLabel.pos === 'top' ? '-top-8 left-1/2 -translate-x-1/2' :
-            outerLabel.pos === 'right' ? '-right-7 top-1/2 -translate-y-1/2' :
-            outerLabel.pos === 'bottom' ? '-bottom-8 left-1/2 -translate-x-1/2' :
-            '-left-7 top-1/2 -translate-y-1/2'
-          }`}>
-            {outerLabel.text}
-          </span>
-        )}
         {planetsInThisRasi.length > 0 ? (
           <div className="flex flex-row flex-wrap justify-center gap-x-2 gap-y-0.5 z-10 px-1">
             {planetsInThisRasi.map((item, idx) => {
@@ -174,7 +164,7 @@ export default function ResultsScreen({ appState, onBack }: ResultsScreenProps) 
               let shortName = nameMap[item] || item.charAt(0);
               
               return (
-                <span key={idx} className="font-bold text-[#1A237E] leading-tight text-sm md:text-base">
+                <span key={idx} className="font-extrabold text-[#1A237E] leading-tight text-lg md:text-2xl">
                   {shortName}
                 </span>
               );
@@ -359,24 +349,24 @@ export default function ResultsScreen({ appState, onBack }: ResultsScreenProps) 
               <div>
                 <h3 className="text-center font-title-lg text-title-lg text-tertiary-container mb-6">జన్మ కుండలి</h3>
                 <div className="flex justify-center w-full">
-                  <div className="border-[2px] border-[#8E24AA] p-8 md:p-10 inline-block bg-white shadow-sm rounded-sm">
-                    <div className="grid grid-cols-4 grid-rows-4 w-full aspect-square max-w-[400px] min-w-[280px] mx-auto bg-white kundali-grid">
-                      {renderChartCell('మీనం', 'meenam', false, { text: 'మీ', pos: 'top' })}
-                      {renderChartCell('మేషం', 'mesham', false, { text: 'మే', pos: 'top' })}
-                      {renderChartCell('వృషభం', 'vrushabham', false, { text: 'వృ', pos: 'top' })}
-                      {renderChartCell('మిథునం', 'mithunam', false, { text: 'మి', pos: 'top' })}
+                  <div className="border-[5px] border-[#8E24AA] p-0 inline-block bg-white shadow-md rounded-sm">
+                    <div className="grid grid-cols-4 grid-rows-4 w-[310px] h-[310px] sm:w-[380px] sm:h-[380px] md:w-[480px] md:h-[480px] mx-auto bg-white kundali-grid aspect-square">
+                      {renderChartCell('మీనం', 'meenam')}
+                      {renderChartCell('మేషం', 'mesham')}
+                      {renderChartCell('వృషభం', 'vrushabham')}
+                      {renderChartCell('మిథునం', 'mithunam')}
                       
-                      {renderChartCell('కుంభం', 'kumbham', false, { text: 'కు', pos: 'left' })}
+                      {renderChartCell('కుంభం', 'kumbham')}
                       {renderChartCell('', '', true)}
-                      {renderChartCell('కర్కాటకం', 'karkatakam', false, { text: 'క', pos: 'right' })}
+                      {renderChartCell('కర్కాటకం', 'karkatakam')}
                       
-                      {renderChartCell('మకరం', 'makaram', false, { text: 'మ', pos: 'left' })}
-                      {renderChartCell('సింహం', 'simham', false, { text: 'సి', pos: 'right' })}
+                      {renderChartCell('మకరం', 'makaram')}
+                      {renderChartCell('సింహం', 'simham')}
                       
-                      {renderChartCell('ధనుస్సు', 'dhanussu', false, { text: 'ధ', pos: 'bottom' })}
-                      {renderChartCell('వృశ్చికం', 'vruschikam', false, { text: 'వృ', pos: 'bottom' })}
-                      {renderChartCell('తుల', 'thula', false, { text: 'తు', pos: 'bottom' })}
-                      {renderChartCell('కన్య', 'kanya', false, { text: 'క', pos: 'bottom' })}
+                      {renderChartCell('ధనుస్సు', 'dhanussu')}
+                      {renderChartCell('వృశ్చికం', 'vruschikam')}
+                      {renderChartCell('తుల', 'thula')}
+                      {renderChartCell('కన్య', 'kanya')}
                     </div>
                   </div>
                 </div>
